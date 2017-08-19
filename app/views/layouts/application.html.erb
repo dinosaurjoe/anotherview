@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-    <h1>Another View</h1>
+    <h1>Another VU</h1>
+    <%= yield %>
     <% if current_user %>
       Logged in as <%= current_user.email %>.
       <%= link_to "Log Out", logout_path %>
