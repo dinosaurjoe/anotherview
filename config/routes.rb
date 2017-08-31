@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  resources :projects do
+    member do
+      post 'upvote'
+    end
+  end
 end
