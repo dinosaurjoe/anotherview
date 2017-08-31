@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @projects.each do |topic| %>
+  <tr>
+    <td><%= project.title %></td>
+    <td><%= project.description %></td>
+    <td><%= pluralize(project.votes.count, "vote") %></td>
+    <td><%= button_to '+1', upvote_project_path(project), method: :post %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
